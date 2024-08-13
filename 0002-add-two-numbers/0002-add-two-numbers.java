@@ -11,35 +11,29 @@
 class Solution {
     public static ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         ListNode head = new ListNode();
-        ListNode result = head;
-        int inMind = 0;
-        int sumResult;
-        while (l1 != null || l2 != null) {
-            if (l1 != null && l2 != null) {
-                sumResult = l1.val + l2.val + inMind;
-                result.next = (l1.next == null && l2.next == null) ? null : new ListNode();
-                l1 = l1.next;
-                l2 = l2.next;
-            } else if (l1 == null) {
-                sumResult = l2.val + inMind;
-                result.next = (l2.next == null) ? null : new ListNode(0);
-                l2 = l2.next;
-            } else {
-                sumResult = l1.val + inMind;
-                result.next = (l1.next == null) ? null : new ListNode(0);
-                l1 = l1.next;
-            }
-
-            if (sumResult > 9) {
-                sumResult = sumResult % 10;
-                inMind = 1;
-            } else {
-                inMind = 0;
-            }
-            result.val = sumResult;
-            if (result.next == null && inMind == 1) result.next = new ListNode(1);
-            result = result.next;
-        }
+        go(head, null, l1, l2, 0);
         return head;
     }
+
+    public static void go(ListNode target, ListNode prev, ListNode l1, ListNode l2, int inMind) {
+        if (l1 != null & l2 != null) {
+            int sum = l1.val + l2.val + inMind;
+            target.val = (sum > 9) ? sum % 10 : sum;
+            target.next = (l1.next == null && l2.next == null) ? null : new ListNode();
+            go(target.next, target, l1.next, l2.next, (sum > 9) ? 1 : 0);
+        } else if (l1 != null) {
+            int sum = l1.val + inMind;
+            target.val = (sum > 9) ? sum % 10 : sum;
+            target.next = (l1.next == null) ? null : new ListNode();
+            go(target.next, target, l1.next, null, (sum > 9) ? 1 : 0);
+        } else if (l2 != null) {
+            int sum = l2.val + inMind;
+            target.val = (sum > 9) ? sum % 10 : sum;
+            target.next = (l2.next == null) ? null : new ListNode();
+            go(target.next, target, null, l2.next, (sum > 9) ? 1 : 0);
+        } else {
+            if ((prev.val == 0 && inMind == 1) || inMind == 1) prev.next = new ListNode(1);
+        }
+    }
+
 }
