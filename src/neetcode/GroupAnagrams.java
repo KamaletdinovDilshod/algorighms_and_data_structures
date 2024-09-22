@@ -9,7 +9,6 @@ import java.util.List;
 public class GroupAnagrams {
     public static void main(String[] args) {
         System.out.println(groupAnagrams(new String[]{"act", "pots", "tops", "cat", "stop", "hat"}));
-        System.out.println(groupAnagrams2(new String[]{"act", "pots", "tops", "cat", "stop", "hat"}));
     }
 
     // Solution 1
