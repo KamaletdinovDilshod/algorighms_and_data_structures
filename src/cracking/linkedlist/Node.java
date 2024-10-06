@@ -1,8 +1,8 @@
 package cracking.linkedlist;
 
-class Node {
-    int data;
-    Node next;
+public class Node {
+    public int data;
+    public Node next;
 
     // Constructor for just the data
     public Node(int data) {
