@@ -1,4 +1,4 @@
-package cracking.stack;
+package cracking_the_coding_interview.stack;
 
 import java.util.NoSuchElementException;
 

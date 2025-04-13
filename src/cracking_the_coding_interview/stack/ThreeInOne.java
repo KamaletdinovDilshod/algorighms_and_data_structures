@@ -1,6 +1,5 @@
-package cracking.stack;
+package cracking_the_coding_interview.stack;
 
-import java.lang.reflect.Array;
 import java.util.EmptyStackException;
 
 public class ThreeInOne {

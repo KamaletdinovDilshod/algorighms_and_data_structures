@@ -1,4 +1,4 @@
-package cracking.linkedlist;
+package cracking_the_coding_interview.linkedlist;
 
 import java.util.HashSet;
 

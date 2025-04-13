@@ -1,10 +1,8 @@
 package neetcode.linkedlist;
 
-import cracking.linkedlist.Node;
+import cracking_the_coding_interview.linkedlist.Node;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
-import java.util.Stack;
 
 public class MergeKSortedLinkedLists {
     public Node mergeKLists(Node[] lists) {

@@ -1,6 +1,6 @@
 package neetcode.linkedlist;
 
-import cracking.linkedlist.Node;
+import cracking_the_coding_interview.linkedlist.Node;
 
 public class AddTwoNumbers {
     public Node addTwoNumbers(Node l1, Node l2) {

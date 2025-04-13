@@ -1,4 +1,4 @@
-package cracking.linkedlist;
+package cracking_the_coding_interview.linkedlist;
 
 public class Node {
     public int data;
