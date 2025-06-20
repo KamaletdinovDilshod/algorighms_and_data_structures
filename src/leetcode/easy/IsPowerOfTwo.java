@@ -2,7 +2,7 @@ package leetcode.easy;
 
 public class IsPowerOfTwo {
     public static void main(String[] args) {
-        System.out.println(isPowerOfTwo(1073741824));
+        System.out.println(isPowerOfTwo(1073741822));
     }
 
     public static boolean isPowerOfTwo(int n) {
