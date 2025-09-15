@@ -21,8 +21,7 @@ public class GreatestCommonDivisorOfStrings {
         return str1.substring(0, n);
     }
 
-    public static int gcd(int len1, int len2) {
-        return len2 == 0 ? len1 : gcd(len1, len2);
+    public static int gcd(int a, int b) {
+        return b == 0 ? a : gcd(b, a % b);
     }
-
 }
