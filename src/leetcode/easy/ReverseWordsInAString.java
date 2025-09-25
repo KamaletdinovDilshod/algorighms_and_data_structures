@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class ReverseWordsInAString {
 
     public static void main(String[] args) {
-        String ss = " 3c      2zPeO dpIMVv2SG    1AM       o       VnUhxK a5YKNyuG     x9    EQ  ruJO       0Dtb8qG91w 1rT3zH F0m n G wU";
+        String ss = " Hello   World ";
         System.out.println(Arrays.toString(ss.trim().split(" ")));
     }
 
@@ -57,6 +57,7 @@ public class ReverseWordsInAString {
 
     // trim leading, trailing and multiple spaces
     String cleanSpaces(char[] a, int n) {
+
         int i = 0, j = 0;
 
         while (j < n) {
