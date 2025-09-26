@@ -1,4 +1,4 @@
-package leetcode.easy;
+package leetcode.medium;
 
 public class IncreasingTripletSubsequence {
     public static void main(String[] args) {

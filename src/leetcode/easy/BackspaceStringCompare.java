@@ -7,8 +7,8 @@ public class BackspaceStringCompare {
         String s = "#abx";
         String t = "d#abx";
         System.out.println(backspaceCompare(s, t));
-
     }
+
     public static boolean backspaceCompare(String s, String t) {
         Stack<Character> st = new Stack<>();
         Stack<Character> st2 = new Stack<>();
