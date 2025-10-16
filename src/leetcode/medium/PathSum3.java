@@ -1,11 +1,8 @@
 package leetcode.medium;
 
-import com.sun.source.tree.Tree;
 
 import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.Map;
-import java.util.Queue;
 
 public class PathSum3 {
 
