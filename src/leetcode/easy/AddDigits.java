@@ -4,6 +4,7 @@ public class AddDigits {
     public static void main(String[] args) {
 //        System.out.println("THIS IS NUMMY: " + (338 / 10));
         System.out.println(addDigits(38));
+        System.out.println(addDigits2(38));
     }
 
     public static int addDigits(int num) {
@@ -21,5 +22,12 @@ public class AddDigits {
             }
         }
         return countedNum;
+    }
+
+    public static int addDigits2(int num) {
+
+        if (num == 0) return 0;
+        else if (num % 9 == 0) return 9;
+        else return num % 9;
     }
 }
