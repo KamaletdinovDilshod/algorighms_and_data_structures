@@ -4,6 +4,7 @@ public class ReverseBits {
     public static void main(String[] args) {
         int num = 11; // Binary: 00000000000000000000000000001011
         int reversed = reverseBits(num); // E
+        System.out.println(reversed);
     }
 
     public static int reverseBits(int n) {
