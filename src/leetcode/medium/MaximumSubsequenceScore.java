@@ -19,6 +19,7 @@ public class MaximumSubsequenceScore {
             pairs[i][0] = nums2[i];
             pairs[i][1] = nums1[i];
         }
+
         Arrays.sort(pairs, (a, b) -> Integer.compare(b[0], a[0]));
 
         PriorityQueue<Integer> pq = new PriorityQueue<>();
