@@ -9,6 +9,7 @@ public class LongestSubarrayOf1sAfterDeletingOneElement {
 
 
         System.out.println(longestSubarray(nums2));
+        System.out.println(longestSubarray(nums));
     }
 
     public static int longestSubarray(int[] nums) {

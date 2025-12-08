@@ -22,7 +22,7 @@ public class LetterCombinationOfAPhoneNumber {
         nl.put('7', "pqrs");
         nl.put('8', "tuv");
         nl.put('9', "wxyz");
-        if (digits.length() == 0) return ans;
+        if (digits.isEmpty()) return ans;
         rec(digits, 0, nl, sb, ans);
         return ans;
     }

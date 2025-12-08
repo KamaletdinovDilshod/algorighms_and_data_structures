@@ -8,14 +8,13 @@ public class OnlineStockSpan {
 
         StockSpanner sp = new StockSpanner();
         System.out.println(sp.next(5));
-
     }
 
 }
 
 class StockSpanner {
 
-    private Stack<int[]> stack;
+    private final Stack<int[]> stack;
 
     public StockSpanner() {
         stack = new Stack<>();

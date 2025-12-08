@@ -8,6 +8,7 @@ public class DailyTemperatures {
 
         int[] tempratures = {73, 74, 75, 71, 69, 72, 76, 73};
         System.out.println(Arrays.toString(dailyTemperatures(tempratures)));
+
     }
 
     public static int[] dailyTemperatures(int[] temperatures) {
