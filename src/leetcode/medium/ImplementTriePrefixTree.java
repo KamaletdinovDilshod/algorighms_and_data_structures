@@ -1,5 +1,8 @@
 package leetcode.medium;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ImplementTriePrefixTree {
     public static void main(String[] args) {
         Trie tr = new Trie();
@@ -27,6 +30,30 @@ class Trie {
 
     public boolean startsWith(String prefix) {
         return root.startsWith(prefix, 0);
+    }
+
+    public List<String> searchAndReturnWords(String pref) {
+        Node curr = root;
+
+        List<String> currentSuggestions = new ArrayList<>();
+        for (char ch : pref.toCharArray()) {
+            if (curr.nodes[ch - 'a'] == null) return currentSuggestions;
+            curr = curr.nodes[ch - 'a'];
+        }
+
+        concatChars(curr, pref, currentSuggestions);
+
+        return currentSuggestions;
+    }
+
+    private void concatChars(Node curr, String prefix, List<String> currentSuggestions) {
+        if (currentSuggestions.size() == 3) return;
+
+        if (curr.isEnd) currentSuggestions.add(prefix);
+
+        for (char c = 'a'; c <= 'z'; c++) {
+            if (curr.nodes[c - 'a'] != null) concatChars(curr.nodes[c - 'a'], prefix + c, currentSuggestions);
+        }
     }
 
     static class Node {
