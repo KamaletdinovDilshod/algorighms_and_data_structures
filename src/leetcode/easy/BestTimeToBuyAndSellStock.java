@@ -7,21 +7,22 @@ public class BestTimeToBuyAndSellStock {
         int[] prices2 = {7, 6, 4, 3, 1};
         int[] prices4 = {1, 2, 4, 2, 5, 7, 2, 4, 9, 0, 9};
         System.out.println(maxProfit(prices));
+        System.out.println(maxProfit2(prices));
         System.out.println(maxProfit(prices3));
         System.out.println(maxProfit(prices2));
         System.out.println(maxProfit(prices4));
     }
 
     public static int maxProfit(int[] prices) {
-int maxProfit = 0;
-int j = 0;
-int diff;
-for (int i = 1; i < prices.length; i++) {
-    diff = prices[i] - prices[j];
-    if (diff < 0) j = i;
-    else maxProfit = Math.max(maxProfit, diff);
-}
-return maxProfit;
+        int maxProfit = 0;
+        int j = 0;
+        int diff;
+        for (int i = 1; i < prices.length; i++) {
+            diff = prices[i] - prices[j];
+            if (diff < 0) j = i;
+            else maxProfit = Math.max(maxProfit, diff);
+        }
+        return maxProfit;
 
 //        int i = 0;
 //        int j = i + 1;
@@ -51,6 +52,18 @@ return maxProfit;
 //       }
 //       return largestDifference;
     }
-    // time complexity = O(n^2)
-    //space complexity = O(1)
+
+    public static int maxProfit2(int[] prices) {
+        int mini = prices[0];
+        int profit = 0;
+
+        for (int i = 1; i < prices.length; i++) {
+            int cost = prices[i] - mini;
+            profit = Math.min(profit, cost);
+
+            mini = Math.min(mini, prices[i]);
+        }
+
+        return profit;
+    }
 }
