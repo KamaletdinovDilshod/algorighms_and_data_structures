@@ -12,6 +12,7 @@ public class KeysAndRooms {
         );
 
         System.out.println(canVisitAllRooms(rooms));
+        System.out.println(canVisitAllRooms2(rooms));
     }
 
     public static boolean canVisitAllRooms(List<List<Integer>> rooms) {
@@ -35,4 +36,34 @@ public class KeysAndRooms {
         }
         return visited.size() == rooms.size();
     }
+
+    public static boolean canVisitAllRooms2(List<List<Integer>> rooms) {
+
+        boolean[] visited = new boolean[rooms.size()];
+        dfs(rooms.get(0), 0, rooms, visited);
+
+        for (boolean v : visited) {
+            if (!v) {
+                return false;
+            }
+        }
+
+        return true;
+
+    }
+
+    public static void dfs(
+            List<Integer> keysInRoom,
+            int room,
+            List<List<Integer>> rooms,
+            boolean[] visited
+    ) {
+        visited[room] = true;
+        for (int i : keysInRoom) {
+            if (!visited[i]) {
+                dfs(rooms.get(i), i, rooms, visited);
+            }
+        }
+    }
+
 }
